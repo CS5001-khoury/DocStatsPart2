@@ -101,6 +101,93 @@ others on your own to get more practice coding.  However, you need to submit at 
 completed practice as its own python file (which means even if the coding practice had an online
 form to fill out like codingbat, you need to copy your solution to a python file).
  
+## 🤖 Use of LLMs
+You should **not** use LLMs for writing your code. This is about learning the process, and without learning the process you may find it actually more difficult to generate code with LLMs. This is because the prompts for LLMs need to be exact, or they will make faulty assumptions about the code you are trying to generate (often generating incorrect test cases!). This is especially true, as you will want to practice recursion, so you can
+better understand it when it is used to traverse data structures. 
+
+You are free to use LLMs to help you think of edge cases  **after** you have a working function. An example prompt could be:
+
+> Please evaluate the following function focusing on these specific areas:
+>
+> 1. **Code correctness**: Does the implementation match the docstring description?
+> 2. **Docstring completeness**: Are the parameters, return value, and examples clear and accurate?
+> 3. **Edge cases**: What boundary conditions or unusual inputs could cause issues?
+>
+> Note that for this function, I am specifically required to use recursion. 
+> 
+> For any edge cases you identify:
+> - Explain why they're problematic
+> - Show what would happen with specific input examples
+> - Suggest how to handle them (documentation or code changes)
+>
+> Focus your feedback on the most important issues first. Assume this is for a beginner programming course.
+>
+> [then paste in the single function you are looking at]
+
+You can also try to use LLMs to generate data, but often the data generated is a bit questionable. 
+
+**Random Text File Generator with Palindromes Prompt**
+> I need you to generate a text file containing random words with specific characteristics that I can customize. Please create a file that meets my requirements and then provide a summary of the file's statistics.
+>
+> **File Requirements:**
+> - Generate random words (mix of real words and made-up words is fine)
+> - Include at least [X] palindromes (words that read the same forwards and backwards, like "radar", "level", "mom")
+> - Organize words across multiple lines (not all on one line)
+> - Make the content varied and interesting to work with
+>
+> **Customizable Parameters (specify your desired values):**
+> - **Minimum palindromes**: [specify number, e.g., 8]
+> - **Target line count**: [specify number, e.g., 15-20 lines]
+> - **Approximate word count**: [specify range, e.g., 100-150 words]
+> - **Word length variety**: [specify preference, e.g., "mix of short and long words" or "mostly 3-7 letter words"]
+> - **Content style**: [specify type, e.g., "completely random", "nature-themed", "everyday objects", or "mixed themes"]
+>
+> **Output Format:**
+> 1. First, provide the generated text file content (formatted as a code block so I can easily copy it)
+> 2. Then provide a statistics summary including:
+>    - **Line count**: [actual number]
+>    - **Word count**: [actual number]
+>    - **Vowel count**: [total vowels a,e,i,o,u across all words]
+>    - **Palindrome count**: [actual number found]
+>    - **List of palindromes**: [show which words are palindromes]
+>
+> **Example request format:**
+> "Generate a file with at least 6 palindromes, around 80-100 words, 12-15 lines, mixed word lengths, nature-themed content."
+>
+> This generated file can be used for programming exercises involving file reading, string manipulation, counting operations, and text analysis practice.
+>
+
+> [!CAUTION]
+> It is often good to ask the LLM to double check the results, as often the initial answers are wrong in situations like this. I would suggest small files, where you can manually confirm the results than larger ones. 
+
+Here is one for learning about file handling.
+
+**Python File Reading Examples Prompt**
+> I am learning how to read files in Python and need clear examples with explanations. Can you show me different ways to read files in Python, starting from the most basic approach and building up to more advanced techniques? Please provide:
+>
+> **Examples I want to see:**
+> - Basic file reading (opening, reading, closing)
+> - Using the `with` statement for file handling
+> - Reading entire files vs. reading line by line
+> - Different read methods (read(), readline(), readlines())
+> - Handling different file types (text files, CSV files, etc.)
+> - Error handling when files don't exist or can't be opened
+> - Reading files with different encodings if relevant
+>
+> **For each example, please explain:**
+> - The syntax and what each part does
+> - When you would use this approach over others
+> - Common mistakes beginners make with this method
+> - Any important considerations (memory usage, performance, best practices)
+> - What happens step-by-step when the code runs
+>
+> **Additional guidance I need:**
+> - Which approach is considered "best practice" and why
+> - How to handle common file reading errors gracefully
+> - Tips for working with large files vs. small files
+> - How to debug file reading issues when things go wrong
+>
+> Please structure your examples from simplest to more complex, and include sample file content so I can understand what the code would actually do. Make the examples practical - the kind of file reading tasks I might actually need to do as a beginner programmer.
 
 ## 📝 Grading Rubric
 
